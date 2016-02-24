@@ -16,6 +16,9 @@ library:
   exposed-modules:
     - Lib
     - JL
+  other-modules:
+    - JL.Language
+    - JL.Types
   dependencies:
     - lens
     - text
@@ -24,6 +27,7 @@ library:
     - optparse-applicative
     - string-conversions
     - unordered-containers
+    - megaparsec
 
 executables:
   jl:
