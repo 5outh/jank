@@ -1,0 +1,33 @@
+name: jl
+version: 0.0.1
+synopsis: Command line JSON processor
+maintainer: Benjamin Kovach <bkovach13@gmail.com>
+license: MIT
+github: 5outh/jl
+category: Development
+
+ghc-options: -Wall
+
+dependencies:
+  - base
+
+library:
+  source-dirs: src
+  exposed-modules:
+    - Lib
+    - JL
+  dependencies:
+    - lens
+    - text
+    - lens-aeson
+    - aeson
+    - optparse-applicative
+    - string-conversions
+    - unordered-containers
+
+executables:
+  jl:
+    main: Main.hs
+    source-dirs: app
+    dependencies:
+      - jl

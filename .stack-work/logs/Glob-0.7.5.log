@@ -1,0 +1,63 @@
+Configuring Glob-0.7.5...
+Building Glob-0.7.5...
+Preprocessing library Glob-0.7.5...
+[1 of 7] Compiling System.FilePath.Glob.Utils ( System/FilePath/Glob/Utils.hs, .stack-work/dist/x86_64-osx/Cabal-1.22.5.0/build/System/FilePath/Glob/Utils.o )
+[2 of 7] Compiling System.FilePath.Glob.Base ( System/FilePath/Glob/Base.hs, .stack-work/dist/x86_64-osx/Cabal-1.22.5.0/build/System/FilePath/Glob/Base.o )
+
+System/FilePath/Glob/Base.hs:24:1: Warning:
+    Module ‘Control.Monad.Trans.Error’ is deprecated:
+      Use Control.Monad.Trans.Except instead
+
+System/FilePath/Glob/Base.hs:437:11: Warning:
+    In the use of type constructor or class ‘ErrorT’
+    (imported from Control.Monad.Trans.Error):
+    Deprecated: "Use Control.Monad.Trans.Except instead"
+
+System/FilePath/Glob/Base.hs:439:27: Warning:
+    In the use of ‘runErrorT’
+    (imported from Control.Monad.Trans.Error):
+    Deprecated: "Use Control.Monad.Trans.Except instead"
+
+System/FilePath/Glob/Base.hs:443:20: Warning:
+    In the use of type constructor or class ‘ErrorT’
+    (imported from Control.Monad.Trans.Error):
+    Deprecated: "Use Control.Monad.Trans.Except instead"
+
+System/FilePath/Glob/Base.hs:448:15: Warning:
+    In the use of ‘throwError’
+    (imported from Control.Monad.Trans.Error):
+    Deprecated: "Use Control.Monad.Trans.Except instead"
+
+System/FilePath/Glob/Base.hs:450:22: Warning:
+    In the use of ‘throwError’
+    (imported from Control.Monad.Trans.Error):
+    Deprecated: "Use Control.Monad.Trans.Except instead"
+
+System/FilePath/Glob/Base.hs:452:30: Warning:
+    In the use of type constructor or class ‘ErrorT’
+    (imported from Control.Monad.Trans.Error):
+    Deprecated: "Use Control.Monad.Trans.Except instead"
+
+System/FilePath/Glob/Base.hs:460:27: Warning:
+    In the use of type constructor or class ‘ErrorT’
+    (imported from Control.Monad.Trans.Error):
+    Deprecated: "Use Control.Monad.Trans.Except instead"
+
+System/FilePath/Glob/Base.hs:466:27: Warning:
+    In the use of type constructor or class ‘ErrorT’
+    (imported from Control.Monad.Trans.Error):
+    Deprecated: "Use Control.Monad.Trans.Except instead"
+
+System/FilePath/Glob/Base.hs:486:15: Warning:
+    In the use of ‘throwError’
+    (imported from Control.Monad.Trans.Error):
+    Deprecated: "Use Control.Monad.Trans.Except instead"
+[3 of 7] Compiling System.FilePath.Glob.Match ( System/FilePath/Glob/Match.hs, .stack-work/dist/x86_64-osx/Cabal-1.22.5.0/build/System/FilePath/Glob/Match.o )
+[4 of 7] Compiling System.FilePath.Glob.Directory ( System/FilePath/Glob/Directory.hs, .stack-work/dist/x86_64-osx/Cabal-1.22.5.0/build/System/FilePath/Glob/Directory.o )
+[5 of 7] Compiling System.FilePath.Glob.Simplify ( System/FilePath/Glob/Simplify.hs, .stack-work/dist/x86_64-osx/Cabal-1.22.5.0/build/System/FilePath/Glob/Simplify.o )
+[6 of 7] Compiling System.FilePath.Glob.Primitive ( System/FilePath/Glob/Primitive.hs, .stack-work/dist/x86_64-osx/Cabal-1.22.5.0/build/System/FilePath/Glob/Primitive.o )
+[7 of 7] Compiling System.FilePath.Glob ( System/FilePath/Glob.hs, .stack-work/dist/x86_64-osx/Cabal-1.22.5.0/build/System/FilePath/Glob.o )
+In-place registering Glob-0.7.5...
+Installing library in
+/Users/Ben/.stack/snapshots/x86_64-osx/lts-5.2/7.10.3/lib/x86_64-osx-ghc-7.10.3/Glob-0.7.5-J8eYhnaKSeW8dehUANn0F1
+Registering Glob-0.7.5...

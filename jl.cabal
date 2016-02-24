@@ -1,0 +1,47 @@
+-- This file has been generated from package.yaml by hpack version 0.8.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:                jl
+version:             0.0.1
+synopsis:            Command line JSON processor
+homepage:            https://github.com/5outh/jl#readme
+bug-reports:         https://github.com/5outh/jl/issues
+license:             MIT
+license-file:        LICENSE
+maintainer:          Benjamin Kovach <bkovach13@gmail.com>
+category:            Development
+build-type:          Simple
+cabal-version:       >= 1.10
+
+source-repository head
+  type: git
+  location: https://github.com/5outh/jl
+
+library
+  hs-source-dirs:
+      src
+  ghc-options: -Wall
+  build-depends:
+      base
+    , lens
+    , text
+    , lens-aeson
+    , aeson
+    , optparse-applicative
+    , string-conversions
+    , unordered-containers
+  exposed-modules:
+      Lib
+      JL
+  default-language: Haskell2010
+
+executable jl
+  main-is: Main.hs
+  hs-source-dirs:
+      app
+  ghc-options: -Wall
+  build-depends:
+      base
+    , jl
+  default-language: Haskell2010
