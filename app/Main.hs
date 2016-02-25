@@ -1,6 +1,7 @@
 module Main where
 
 import Lib
+import qualified JL as JL
 
 main :: IO ()
-main = someFunc
+main = JL.start 

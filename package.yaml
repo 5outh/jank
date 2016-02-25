@@ -28,6 +28,7 @@ library:
     - string-conversions
     - unordered-containers
     - megaparsec
+    - bytestring
 
 executables:
   jl:

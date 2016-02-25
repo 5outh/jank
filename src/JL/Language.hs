@@ -1,4 +1,3 @@
-{-# LANGUAGE RecursiveDo #-}
 module JL.Language (expr) where
 
 import Text.Megaparsec
@@ -20,7 +19,5 @@ keys = map T.pack <$> some key
 
 expr :: Parser Expr
 expr = Get <$> keys
-
--- jl "{\"a\": 8}" ".a" -- 8
 
 
