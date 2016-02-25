@@ -34,7 +34,6 @@ library
     , megaparsec
     , bytestring
   exposed-modules:
-      Lib
       JL
   other-modules:
       JL.Language

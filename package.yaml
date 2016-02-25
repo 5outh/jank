@@ -14,7 +14,6 @@ dependencies:
 library:
   source-dirs: src
   exposed-modules:
-    - Lib
     - JL
   other-modules:
     - JL.Language
