@@ -28,6 +28,7 @@ library:
     - unordered-containers
     - megaparsec
     - bytestring
+    - free
 
 executables:
   jl:

@@ -1,24 +1,26 @@
 {-# LANGUAGE RankNTypes #-}
 module JL where
 
-import Data.List (foldl')
 import Data.Aeson.Encode
 import Data.Aeson.Lens
 import Data.Aeson.Types hiding (parse, Parser)
-import Control.Lens (Traversal', (^?))
-import qualified Data.Text as T
 import JL.Types
 import JL.Language
 import Text.Megaparsec (parse)
 import Text.Megaparsec.Error
 import Options.Applicative hiding (ParseError)
-import Control.Monad
-import qualified Data.ByteString.Lazy as BL
-import Control.Lens hiding (argument)
+import qualified Data.ByteString.Lazy.Char8 as C8
+import Control.Lens hiding (argument, Empty)
 
-path :: (AsValue t) => [Key] -> Traversal' t Value
-path [] = _Value 
-path (i:is) = foldl' (.) (key (getKey i)) (map (key . getKey) is)
+-- This could be refactored to use fold(l)
+path :: AsValue t => PrimOp -> Traversal' t Value
+path Empty = _Value
+path (KeyAt k) = key (getKey k)
+path (IndexAt i) = nth (getIndex i)
+path (KeyAt k :+: o) = key (getKey k) . path o
+path (IndexAt i :+: o) = nth (getIndex i) . path o
+path (Empty :+: o) = path o
+path (opA@(_ :+: _) :+: opB) = path opA . path opB
 
 traversal :: AsValue t => Expr -> Traversal' t Value 
 traversal (Get keys) = path keys
@@ -34,7 +36,7 @@ interpret (Set keys val) json
 runJL :: String -> String -> Either ParseError (Maybe Value)
 runJL json e
   = case parsed of
-      Right expr -> return (interpret expr json)
+      Right e_ -> return (interpret e_ json)
       Left err -> Left err
   where
     parsed = parse expr "(error)" e 
@@ -48,7 +50,7 @@ start :: IO ()
 start = do
   (json, cmd) <- execParser opts
   case runJL json cmd of
-    Right (Just val) -> BL.putStrLn (encode val) 
+    Right (Just val) -> C8.putStrLn (encode val)
     _ -> putStrLn "Something went wrong..."
   where 
     opts = info (helper <*> jl)

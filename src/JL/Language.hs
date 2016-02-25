@@ -19,11 +19,17 @@ import qualified Data.ByteString.Lazy.Char8 as C8
 ident :: Parser T.Text 
 ident = T.pack <$> some (oneOf $ ['a'..'z'] ++ ['A'..'Z'])
 
-key :: Parser Key
-key = Key <$> (char '.' *> ident)
+keyAt :: Parser PrimOp
+keyAt = KeyAt . Key <$> (char '.' *> ident)
 
-keys :: Parser [Key]
-keys = some key
+integer :: Parser Int
+integer = fromInteger <$> L.integer
+
+indexAt :: Parser PrimOp
+indexAt = IndexAt . Index <$> between (char '[') (char ']') integer
+
+operation :: Parser PrimOp
+operation = mconcat <$> some (try indexAt <|> keyAt)
 
 -- If invalid json, this should fail to parse, really...
 value :: Parser Value
@@ -32,5 +38,5 @@ value = decode . C8.pack <$> some anyChar >>= \case
   Just val -> return val
 
 expr :: Parser Expr
-expr = try (Set <$> keys <*> (char '=' *> value)) <|> (Get <$> keys <* eof)
+expr = try (Set <$> operation <*> (char '=' *> value)) <|> (Get <$> operation <* eof)
 

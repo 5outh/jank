@@ -33,6 +33,7 @@ library
     , unordered-containers
     , megaparsec
     , bytestring
+    , free
   exposed-modules:
       JL
   other-modules:
