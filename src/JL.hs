@@ -27,13 +27,14 @@ jl = (,)
   <$> argument str (metavar "JSON")
   <*> argument str (metavar "COMMAND")
 
+go :: String -> String -> IO ()
+go json cmd = case runJL json cmd of
+  Right (Just val) -> printValue val
+  Right Nothing -> putStrLn "null"
+  Left err -> print err
+
 start :: IO ()
-start = do
-  (json, cmd) <- execParser opts
-  case runJL json cmd of
-    Right (Just val) -> printValue val
-    Right Nothing ->putStrLn "null" 
-    Left err -> print err 
+start = execParser opts >>= uncurry go
   where 
     opts = info (helper <*> jl)
       ( fullDesc
