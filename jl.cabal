@@ -34,10 +34,12 @@ library
     , megaparsec
     , bytestring
     , free
+    , vector
   exposed-modules:
       JL
   other-modules:
       JL.Language
+      JL.Interpret
       JL.Types
   default-language: Haskell2010
 

@@ -12,8 +12,9 @@ newtype Index = Index{ getIndex :: Int }
 data PrimOp
   = KeyAt Key
   | IndexAt Index
+  | AllElements -- All elements of an array
   | PrimOp :+: PrimOp
-  | Empty 
+  | Empty
     deriving (Show, Eq)
 
 instance Monoid PrimOp where
@@ -25,5 +26,7 @@ instance Monoid PrimOp where
 data Expr
   = Get PrimOp -- get @ path in object 
   | Set PrimOp Value -- set path in object to value
+  | GetIndexed PrimOp -- Get a list of values
+  | SetIndexed PrimOp Value -- Set a list of values
     deriving (Show, Eq)
 

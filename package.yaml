@@ -17,6 +17,7 @@ library:
     - JL
   other-modules:
     - JL.Language
+    - JL.Interpret
     - JL.Types
   dependencies:
     - lens
@@ -29,6 +30,7 @@ library:
     - megaparsec
     - bytestring
     - free
+    - vector
 
 executables:
   jl:
