@@ -3,7 +3,7 @@ version: 0.0.1
 synopsis: Command line JSON processor
 maintainer: Benjamin Kovach <bkovach13@gmail.com>
 license: MIT
-github: 5outh/jl
+github: 5outh/jank
 category: Development
 
 ghc-options: -Wall

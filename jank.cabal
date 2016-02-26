@@ -6,8 +6,8 @@ name:           jank
 version:        0.0.1
 synopsis:       Command line JSON processor
 category:       Development
-homepage:       https://github.com/5outh/jl#readme
-bug-reports:    https://github.com/5outh/jl/issues
+homepage:       https://github.com/5outh/jank#readme
+bug-reports:    https://github.com/5outh/jank/issues
 maintainer:     Benjamin Kovach <bkovach13@gmail.com>
 license:        MIT
 license-file:   LICENSE
@@ -16,7 +16,7 @@ cabal-version:  >= 1.10
 
 source-repository head
   type: git
-  location: https://github.com/5outh/jl
+  location: https://github.com/5outh/jank
 
 library
   hs-source-dirs:
