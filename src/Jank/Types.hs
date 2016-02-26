@@ -1,4 +1,4 @@
-module JL.Types where
+module Jank.Types where
 
 import qualified Data.Text as T
 import Data.Aeson (Value)

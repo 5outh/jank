@@ -2,17 +2,17 @@
 --
 -- see: https://github.com/sol/hpack
 
-name:                jl
-version:             0.0.1
-synopsis:            Command line JSON processor
-homepage:            https://github.com/5outh/jl#readme
-bug-reports:         https://github.com/5outh/jl/issues
-license:             MIT
-license-file:        LICENSE
-maintainer:          Benjamin Kovach <bkovach13@gmail.com>
-category:            Development
-build-type:          Simple
-cabal-version:       >= 1.10
+name:           jank
+version:        0.0.1
+synopsis:       Command line JSON processor
+category:       Development
+homepage:       https://github.com/5outh/jl#readme
+bug-reports:    https://github.com/5outh/jl/issues
+maintainer:     Benjamin Kovach <bkovach13@gmail.com>
+license:        MIT
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
 
 source-repository head
   type: git
@@ -36,19 +36,19 @@ library
     , free
     , vector
   exposed-modules:
-      JL
+      Jank
   other-modules:
-      JL.Language
-      JL.Interpret
-      JL.Types
+      Jank.Language
+      Jank.Interpret
+      Jank.Types
   default-language: Haskell2010
 
-executable jl
+executable jank
   main-is: Main.hs
   hs-source-dirs:
       app
   ghc-options: -Wall
   build-depends:
       base
-    , jl
+    , jank
   default-language: Haskell2010

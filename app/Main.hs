@@ -1,6 +1,6 @@
 module Main where
 
-import qualified JL as JL
+import qualified Jank
 
 main :: IO ()
-main = JL.start 
+main = Jank.start 

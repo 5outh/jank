@@ -1,13 +1,12 @@
 {-# LANGUAGE LambdaCase #-}
-module JL.Language (expr) where
+module Jank.Language (expr) where
 
 import Text.Megaparsec
 import Text.Megaparsec.String
-import Data.Char (isAlpha)
 import qualified Data.Text as T
 import qualified Text.Megaparsec.Lexer as L
 import Control.Monad
-import JL.Types
+import Jank.Types
 import Data.Aeson
 import qualified Data.ByteString.Lazy.Char8 as C8 
 

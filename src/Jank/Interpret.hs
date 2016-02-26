@@ -1,7 +1,7 @@
 {-# LANGUAGE RankNTypes #-}
-module JL.Interpret where
+module Jank.Interpret where
 
-import JL.Types
+import Jank.Types
 import Data.Aeson.Types hiding (parse, Parser)
 import Data.Aeson.Lens
 import Control.Lens hiding (argument, Empty, op)
