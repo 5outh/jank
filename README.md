@@ -33,3 +33,5 @@ You can either get nested data or set it. You can do this over arrays as well wi
 - More language stuff
 - Space insensitivity (parsing)
 - Build the thing, shove it in `brew`
+- Add option to capture json from stdin
+- 
