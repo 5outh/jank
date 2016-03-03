@@ -22,10 +22,8 @@ runJank json e
   where
     parsed = parse expr "(error)" e 
 
-jank :: Parser (String, String)
-jank = (,)
-  <$> argument str (metavar "JSON")
-  <*> argument str (metavar "COMMAND")
+jank :: Parser String 
+jank = argument str (metavar "COMMAND")
 
 go :: String -> String -> IO ()
 go json cmd = case runJank json cmd of
@@ -34,7 +32,10 @@ go json cmd = case runJank json cmd of
   Left err -> print err
 
 start :: IO ()
-start = execParser opts >>= uncurry go
+start = do
+  cmd <- execParser opts
+  json <- C8.unpack <$> C8.getContents
+  go json cmd 
   where 
     opts = info (helper <*> jank)
       ( fullDesc
