@@ -4,24 +4,24 @@ A CLI JSON Processor
 jank is a JSON processor. It is most easily explained with a demo:
 
 ```bash
-$ jank "{\"a\" : {\"b\": 100}}" ".a.b"
+$ echo "{\"a\" : {\"b\": 100}}" | jank ".a.b"
 100
 
-$ jank "{\"a\" : {\"b\": [1, 2, 3]}}" ".a.b"
+$ echo "{\"a\" : {\"b\": [1, 2, 3]}}" | jank ".a.b"
 1
 2
 3
 
-$ jank "{\"a\" : {\"b\": 100}}" ".a.b=900"
+$ echo "{\"a\" : {\"b\": 100}}" | jank ".a.b=900"
 {"a":{"b":900}}
 
-$ jank "{\"a\" : {\"b\": [1, 2, 3]}}" ".a.b[0]=900"
+$ echo "{\"a\" : {\"b\": [1, 2, 3]}}" | jank ".a.b[0]=900"
 {"a":{"b":[900,2,3]}}
 
-$ jank "{\"a\" : {\"b\": [1, 2, 3]}}" ".a.b[]=900"
+$ echo "{\"a\" : {\"b\": [1, 2, 3]}}" | jank ".a.b[]=900"
 {"a":{"b":[900,900,900]}}
 
-$ jank "{}" ".a.b[0]=900"
+$ echo "{}" | jank ".a.b[0]=900"
 {}
 ```
 
@@ -33,5 +33,3 @@ You can either get nested data or set it. You can do this over arrays as well wi
 - More language stuff
 - Space insensitivity (parsing)
 - Build the thing, shove it in `brew`
-- Add option to capture json from stdin
-- 
