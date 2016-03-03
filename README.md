@@ -29,7 +29,5 @@ You can either get nested data or set it. You can do this over arrays as well wi
 
 ### TODOs
 
-- Command pipelining (`.a.b[]=900|.a.b`), for example
-- More language stuff
 - Space insensitivity (parsing)
 - Build the thing, shove it in `brew`
